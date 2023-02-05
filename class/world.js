@@ -82,6 +82,7 @@ class World {
       let enemyRoom = World.rooms[enemyData.room];
       let newEnemy = new Enemy(enemyData.name, enemyData.description, enemyRoom);
       World.enemies.push(newEnemy);
+      // newEnemy.act();
     }
 
   }

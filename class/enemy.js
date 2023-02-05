@@ -52,10 +52,10 @@ class Enemy extends Character {
     };
 
 
-    // setTimeout(resetCooldown, 3000);//original code
-    const coolT = this.cooldown;
+    // setTimeout(resetCooldown, this.cooldown);//original code
+    // const coolT = this.cooldown;
     const reset = resetCooldown.bind(this);// is this the point? "Take a look at the `Enemy.rest()` setTimeout loop. There is a bug..."
-    setTimeout(reset, coolT);
+    setTimeout(reset, this.cooldown);
   }
 
   attack() {
