@@ -7,6 +7,7 @@ class Enemy extends Character {
     super(name, description, currentRoom);
     this.cooldown = 3000;
     this.attackTarget = null;
+    this.act();
   }
 
   setPlayer(player) {
@@ -51,7 +52,7 @@ class Enemy extends Character {
     };
 
 
-    // setTimeout(resetCooldown, this.cooldown);//original code
+    // setTimeout(resetCooldown, 3000);//original code
     const coolT = this.cooldown;
     const reset = resetCooldown.bind(this);// is this the point? "Take a look at the `Enemy.rest()` setTimeout loop. There is a bug..."
     setTimeout(reset, coolT);
@@ -90,7 +91,7 @@ class Enemy extends Character {
 
 
   scratchNose() {
-    this.cooldown += 1000;
+    this.cooldown += 3000;
 
     this.alert(`${this.name} scratches its nose`);
 
